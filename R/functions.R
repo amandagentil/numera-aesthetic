@@ -62,9 +62,6 @@ numera_pal <- function(palette = "main", reverse = FALSE, ...) {
 
 
 
-
-
-
 #' Color scale constructor for numera colors
 #'
 #' @param palette Character name of palette in numera_palettes
@@ -75,7 +72,6 @@ numera_pal <- function(palette = "main", reverse = FALSE, ...) {
 #'
 scale_color_numera <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- numera_pal(palette = palette, reverse = reverse)
-
   if (discrete) {
     discrete_scale("colour", paste0("numera_", palette), palette = pal, ...)
   } else {
@@ -91,7 +87,7 @@ scale_color_numera <- function(palette = "main", discrete = TRUE, reverse = FALS
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_fill_numera <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
+scale_fill_numera <- function(palette, discrete = TRUE, reverse = FALSE, ...) {
   pal <- numera_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
