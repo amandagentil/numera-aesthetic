@@ -52,7 +52,7 @@ numera_palettes <- list(
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #'
-numera_pal <- function(palette = "main", reverse = FALSE, ...) {
+numera_pal <- function(palette, reverse = FALSE, ...) {
   pal <- numera_palettes[[palette]]
 
   if (reverse) pal <- rev(pal)
@@ -70,7 +70,7 @@ numera_pal <- function(palette = "main", reverse = FALSE, ...) {
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_color_numera <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
+scale_color_numera <- function(palette, discrete = TRUE, reverse = FALSE, ...) {
   pal <- numera_pal(palette = palette, reverse = reverse)
   if (discrete) {
     discrete_scale("colour", paste0("numera_", palette), palette = pal, ...)
