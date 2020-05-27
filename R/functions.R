@@ -39,9 +39,9 @@ numera_cols <- function(...) {
 numera_palettes <- list(
   `main`  = numera_cols("azul_numera", "cinza_escuro"),
 
-  `light`  = walras_cols("azul_numera", "cinza_intermediario"),
+  `light`  = numera_cols("azul_numera", "cinza_intermediario"),
 
-  `mixed` = walras_cols("azul_numera", "cinza_escuro", "cinza_intermediario", "cinza_claro")
+  `mixed` = numera_cols("azul_numera", "cinza_escuro", "cinza_intermediario", "cinza_claro")
 )
 
 
@@ -65,9 +65,9 @@ numera_pal <- function(palette = "main", reverse = FALSE, ...) {
 
 
 
-#' Color scale constructor for walras colors
+#' Color scale constructor for numera colors
 #'
-#' @param palette Character name of palette in walras_palettes
+#' @param palette Character name of palette in numera_palettes
 #' @param discrete Boolean indicating whether color aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or
@@ -83,9 +83,9 @@ scale_color_numera <- function(palette = "main", discrete = TRUE, reverse = FALS
   }
 }
 
-#' Fill scale constructor for walras colors
+#' Fill scale constructor for numera colors
 #'
-#' @param palette Character name of palette in walras_palettes
+#' @param palette Character name of palette in numera_palettes
 #' @param discrete Boolean indicating whether color aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or
