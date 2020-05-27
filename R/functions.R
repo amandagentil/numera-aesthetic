@@ -73,11 +73,11 @@ numera_pal <- function(palette = "main", reverse = FALSE, ...) {
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_color_walras <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- walras_pal(palette = palette, reverse = reverse)
+scale_color_numera <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
+  pal <- numera_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("walras_", palette), palette = pal, ...)
+    discrete_scale("colour", paste0("numera_", palette), palette = pal, ...)
   } else {
     scale_color_gradientn(colours = pal(256), ...)
   }
@@ -91,11 +91,11 @@ scale_color_walras <- function(palette = "main", discrete = TRUE, reverse = FALS
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_fill_walras <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
-  pal <- walras_pal(palette = palette, reverse = reverse)
+scale_fill_numera <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
+  pal <- numera_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("walras_", palette), palette = pal, ...)
+    discrete_scale("fill", paste0("numera_", palette), palette = pal, ...)
   } else {
     scale_fill_gradientn(colours = pal(256), ...)
   }
