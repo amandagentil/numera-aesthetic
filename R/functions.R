@@ -26,7 +26,7 @@ numera_colors <- c(
 #' @param ... Character names of drsimonj_colors
 #'
 numera_cols <- function(...) {
-  cols <- c(...)
+  cols <- c(...) 
 
   if (is.null(cols))
     return (drsimonj_colors)
