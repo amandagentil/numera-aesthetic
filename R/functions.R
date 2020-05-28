@@ -13,7 +13,7 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-numera_colors <- c(,
+numera_colors <- c(
   `cinza_escuro`  = "#4D4D4D",
   `cinza_claro`   = "#D9D9D9",
   `cinza_intermediario` = "grey",
