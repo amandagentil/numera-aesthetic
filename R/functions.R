@@ -161,3 +161,32 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
   
   return(lp)
 }
+
+
+numera_theme <- function() {
+  
+  require(ggplot2)
+  require(ggthemes)
+  require(extrafont)
+  
+ 
+  
+ p <-  theme_grey() +
+            theme(panel.grid = element_blank(),
+                  panel.background = element_rect(fill = "white"),
+                  title = element_text(family = "Roboto Light", colour = "#4D4D4D"),
+                  axis.text = element_text(family = "Roboto Light", colour = "#4D4D4D", size = 8),
+                  axis.text.x = element_text(vjust = 2),
+                  legend.text = element_text(family = "Roboto Light", colour = "#4D4D4D"),
+                  axis.ticks = element_line(colour = "#8F8F8F"),
+                  panel.border = element_blank(),
+                  axis.line = element_line(color = "#ebebeb", size = 0.25),
+                  strip.background = element_rect(fill = '#ebebeb'),
+                  strip.text = element_text(family = "Roboto Light", colour = "#474747", size = 9),
+                  plot.margin = margin(t = 0.5, r = 0.5, b = 0.5, l = 0.5, unit = "cm"),
+                  complete = TRUE
+                  )
+  
+  return(p)
+  
+  }
