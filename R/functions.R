@@ -13,13 +13,11 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-numera_colors <- c(
-  `white`        = "#FFFFFF",
+numera_colors <- c(,
   `cinza_escuro`  = "#4D4D4D",
-  `cinza_claro`   = "grey85",
-  `cinza_intermediario` = "#D9D9D9",
-  `azul_numera`   = "#5288DB",
-  `preto` = "#000000")
+  `cinza_claro`   = "#D9D9D9",
+  `cinza_intermediario` = "grey",
+  `azul_numera`   = "#5288DB")
 
 #' Function to extract drsimonj colors as hex codes
 #'
@@ -124,6 +122,42 @@ lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2) {
          strip.text = element_text(size=14, colour = "white"),
          strip.background = element_rect(fill="grey"))
    
+  
+  return(lp)
+}
+ 
+#' Função para a criação de gráficos estilo "lollipop" facetado
+
+
+fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) { 
+  
+  
+  
+  
+  lp <- ggplot(data = data) +
+    geom_segment(aes_(x=as.name(x), xend= as.name(x), y= as.name(y1), yend= as.name(y2)), color="darkgrey", linetype = "dashed", size = 0.8) +
+    geom_point(aes_(x= as.name(x), y= as.name(y2), colour =  legenda2), size=8) +
+    geom_text(aes_(label=  as.name(y2), x =  as.name(x), y =  as.name(y2)), colour = "white", size = 4) + 
+    geom_point(aes_(x= as.name(x), y= as.name(y1), colour =  legenda1), size=8) +
+    geom_text(aes_(label=  as.name(y1), x =  as.name(x), y =  as.name(y1)), colour = "white", size = 4) +
+    scale_colour_manual(values = c("#5288DB", "#4d4d4d")) + 
+    coord_flip() + 
+    facet_wrap(.~data[[fct]]) + 
+    #ylim(80,98) +
+    xlab("") +
+    ylab("") +
+    coord_flip() + 
+    theme(axis.text=element_text(size=20),
+          panel.background = element_rect(fill = "white"),
+          panel.grid.major.y = element_line(colour = "lightgrey"),
+          legend.title = element_blank(),
+          legend.text = element_text(size = 15, colour="#4D4D4D"),
+          axis.text.x = element_blank(),
+          axis.ticks = element_blank(),
+          panel.border = element_rect(colour = "#4d4d4d", fill = NA),
+          strip.text = element_text(size=14, colour = "white"),
+          strip.background = element_rect(fill="grey"))
+  
   
   return(lp)
 }
