@@ -96,3 +96,34 @@ scale_fill_numera <- function(palette = palette, discrete = TRUE, reverse = FALS
     scale_fill_gradientn(colours = pal(256), ...)
   }
 }
+
+
+
+#' Função para a criação de gráficos estilo "lollipop"
+
+lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2) { 
+ 
+  
+ lp <- ggplot(data = data) +
+    geom_segment(aes_(x=as.name(x), xend= as.name(x), y= as.name(y1), yend= as.name(y2)), color="darkgrey", linetype = "dashed", size = 0.8) +
+    geom_point(aes_(x= as.name(x), y= as.name(y2), colour =  legenda2), size=8) +
+   geom_text(aes_(label=  as.name(y2), x =  as.name(x), y =  as.name(y2)), colour = "white", size = 4) + 
+   geom_point(aes_(x= as.name(x), y= as.name(y1), colour =  legenda1), size=8) +
+   geom_text(aes_(label=  as.name(y1), x =  as.name(x), y =  as.name(y1)), colour = "white", size = 4) +
+   scale_colour_manual(values = c("#5288DB", "#4d4d4d")) + 
+   coord_flip() +
+   xlab("")+
+   ylab("") + 
+   theme(axis.text=element_text(size=20),
+         panel.background = element_rect(fill = "white"),
+         panel.grid.major.y = element_line(colour = "lightgrey"),
+         legend.title = element_blank(),
+         legend.text = element_text(size = 15, colour="#4D4D4D"),
+         axis.text.x = element_blank(),
+         axis.ticks = element_blank(),
+         strip.text = element_text(size=14, colour = "white"),
+         strip.background = element_rect(fill="grey"))
+   
+  
+  return(lp)
+}
