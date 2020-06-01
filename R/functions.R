@@ -163,7 +163,7 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
 }
 
 
-numera_theme <- function(grid_horizontal = TRUE, grid_vertical = TRUE, graph_contour = TRUE) {
+numera_theme <- function() {
   
   require(ggplot2)
   require(ggthemes)
@@ -184,10 +184,7 @@ numera_theme <- function(grid_horizontal = TRUE, grid_vertical = TRUE, graph_con
                   strip.background = element_rect(fill = '#ebebeb'),
                   strip.text = element_text(family = "Roboto Light", colour = "#474747", size = 9),
                   plot.margin = margin(t = 0.5, r = 0.5, b = 0.5, l = 0.5, unit = "cm"),
-                  complete = TRUE,
-                  grid_horizontal = TRUE, 
-                  grid_vertical = TRUE, 
-                  graph_contour = TRUE
+                  complete = TRUE
                   )
   
   return(p)
