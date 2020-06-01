@@ -163,7 +163,7 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
 }
 
 
-numera_theme <- function() {
+numera_theme <- function(grid_horizontal = TRUE, grid_vertical = TRUE, graph_contour = TRUE) {
   
   require(ggplot2)
   require(ggthemes)
@@ -171,7 +171,7 @@ numera_theme <- function() {
   
  
   
- p <-  theme_grey(grid_horizontal = TRUE, grid_vertical = TRUE, graph_contour = TRUE) +
+ p <-  theme_grey() +
             theme(panel.grid = element_blank(),
                   panel.background = element_rect(fill = "white"),
                   title = element_text(family = "Roboto Light", colour = "#4D4D4D"),
