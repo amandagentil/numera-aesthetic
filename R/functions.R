@@ -171,7 +171,7 @@ numera_theme <- function() {
   
  
   
- p <-  theme_grey() +
+ p <-  theme_grey(grid_horizontal = TRUE, grid_vertical = TRUE, graph_contour = TRUE) +
             theme(panel.grid = element_blank(),
                   panel.background = element_rect(fill = "white"),
                   title = element_text(family = "Roboto Light", colour = "#4D4D4D"),
@@ -184,7 +184,10 @@ numera_theme <- function() {
                   strip.background = element_rect(fill = '#ebebeb'),
                   strip.text = element_text(family = "Roboto Light", colour = "#474747", size = 9),
                   plot.margin = margin(t = 0.5, r = 0.5, b = 0.5, l = 0.5, unit = "cm"),
-                  complete = TRUE
+                  complete = TRUE,
+                  grid_horizontal = TRUE, 
+                  grid_vertical = TRUE, 
+                  graph_contour = TRUE
                   )
   
   return(p)
