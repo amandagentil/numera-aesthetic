@@ -146,17 +146,7 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
     #ylim(80,98) +
     xlab("") +
     ylab("") +
-    coord_flip() + 
-    theme(axis.text=element_text(size=20),
-          panel.background = element_rect(fill = "white"),
-          panel.grid.major.y = element_line(colour = "lightgrey"),
-          legend.title = element_blank(),
-          legend.text = element_text(size = 15, colour="#4D4D4D"),
-          axis.text.x = element_blank(),
-          axis.ticks = element_blank(),
-          panel.border = element_rect(colour = "#4d4d4d", fill = NA),
-          strip.text = element_text(size=14, colour = "white"),
-          strip.background = element_rect(fill="grey"))
+    coord_flip()
   
   
   return(lp)
