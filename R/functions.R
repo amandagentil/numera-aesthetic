@@ -142,11 +142,21 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
     geom_text(aes_(label=  as.name(y1), x =  as.name(x), y =  as.name(y1)), colour = "white", size = 4) +
     scale_colour_manual(values = c("#5288DB", "#4d4d4d")) + 
     coord_flip() + 
-    facet_grid(.~data[[fct]]) + 
+    facet_wrap(.~data[[fct]]) + 
     #ylim(80,98) +
     xlab("") +
     ylab("") +
-    coord_flip()
+    coord_flip() +
+    theme(axis.text=element_text(size=20),
+          panel.background = element_rect(fill = "white"),
+          panel.grid.major.y = element_line(colour = "lightgrey"),
+          legend.title = element_blank(),
+          legend.text = element_text(size = 15, colour="#4D4D4D"),
+          axis.text.x = element_blank(),
+          axis.ticks = element_blank(),
+          panel.border = element_rect(colour = "#4d4d4d", fill = NA),
+          strip.text = element_text(size=14, colour = "white"),
+          strip.background = element_rect(fill="grey"))
   
   
   return(lp)
