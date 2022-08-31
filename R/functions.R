@@ -142,7 +142,7 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
     geom_text(aes_(label=  as.name(y1), x =  as.name(x), y =  as.name(y1)), colour = "white", size = 4) +
     scale_colour_manual(values = c("#5288DB", "#4d4d4d")) + 
     coord_flip() + 
-    facet_wrap(.~data[[fct]]) + 
+    facet_wrap(~data[[fct]]) + 
     #ylim(80,98) +
     xlab("") +
     ylab("") +
